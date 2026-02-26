@@ -133,8 +133,9 @@ public class Craps {
     // POST: prompt the user to roll again & return true/false
 
     public static boolean rollAgain(Scanner input) {
-        while (true) {
-            System.out.println("Roll Again (Y/N)?");
+        System.out.println("Roll Again (Y/N)?");
+        boolean answered = false
+        while (!answered) {
             String again = input.nextLine();
             if (!again.equals("Y") && !again.equals("N")) {
                 System.out.println("Invalid input, please enter Y or N");
@@ -142,9 +143,11 @@ public class Craps {
             }
 
             if (again.equals("Y")) {
+                answered = true
                 return true;
             }
             if (again.equals("N")) {
+                answered = true
                 return false;
             }
         }
